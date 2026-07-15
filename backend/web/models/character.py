@@ -9,12 +9,12 @@ from web.models.user import UserProfile
 def photo_upload_to(instance, filename):
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4().hex[:10]}.{ext}'
-    return f'photos/photos/{instance.author.user_id}{filename}'
+    return f'character/photos/{instance.author.user_id}_{filename}'
 
 def background_image_upload_to(instance, filename):
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4().hex[:10]}.{ext}'
-    return f'photos/background_images/{instance.author.user_id}{filename}'
+    return f'character/background_images/{instance.author.user_id}_{filename}'
 
 class Character(models.Model):
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)

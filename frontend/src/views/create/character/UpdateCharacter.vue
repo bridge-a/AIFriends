@@ -56,7 +56,7 @@ async function handleUpdate() {
     formData.append('character_id', characterId)
     formData.append('name', name)
     formData.append('profile', profile)
- 
+
     if (photo !== character.value.photo) {
       formData.append('photo', base64ToFile(photo, 'photo.png'))
     }

@@ -30,7 +30,7 @@ class RegisterView(APIView):
                 'user_id': user.id,
                 'username': user.username,
                 'photo': user_profile.photo.url,  # 必须加url！！！
-                'profile_photo': user_profile.profile,
+                'profile': user_profile.profile,
             })
             response.set_cookie(
                 key='refresh_token',
